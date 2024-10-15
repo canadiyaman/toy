@@ -28,6 +28,24 @@ python manage.py migrate
 python manage.py loadtestdata
 ```
 
+Installation With Docker
+=================
+> Make sure you have Docker on your computer https://www.docker.com/get-started/
+> Same thing for docker compose (I used home brew to install on my local)
+
+
+- Copy .env-example file as .env and fill parameters
+
+```shell
+cp .env-example .env
+```
+
+- Run docker-compose and build all services
+```shell
+docker compose up --build
+```
+
+- Enjoy
 
 
 ![obi wan kenobi](static/logo.png)
@@ -47,5 +65,4 @@ python manage.py loadtestdata
 
 ### 4- Articles Create page
 ![articles edited page](static/create-article-page.png)
-
 
