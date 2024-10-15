@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block container %}
+<div class="col-sm-2 sidenav"></div>
+<div class="col-sm-8 text-left">
+  <h1>List Of My Articles</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Status</th>
+        <th scope="col">Created At</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in object_list %}
+      <tr>
+        <td>{{ article.title }}</td>
+        <td><span class="badge badge-pill {% if article.status == 'approved' %}badge-success{% elif article.status == 'rejected' %}badge-danger{% else %}}badge-light{% endif %}">{{ article.get_status_display }}</span></td>
+        <td>{{ article.created_at }}</td>
+        <td><a href="{% url 'update-article' pk=article.pk %}">Edit</a></td>
+      </tr>
+      {% empty %}
+      <tr>
+        <th colspan="3" scope="row">No Data Found</th>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="col-sm-2 sidenav"></div>
+{% endblock %}

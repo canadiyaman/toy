@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block container %}
+<div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+    <div class="col-sm-8 text-left">
+      <h1>Writer Summary Table</h1>
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Writer</th>
+              <th scope="col">Total Articles Written</th>
+              <th scope="col">Total Articles Written Last 30</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for article in articles %}
+            <tr>
+              <th scope="row">{{ article.user }}</th>
+              <td>{{ article.total_article_count }}</td>
+              <td>{{ article.witten_articles_last_30 }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+              <th colspan="3" scope="row">No Data Found</th>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    <div class="col-sm-2 sidenav">
+    </div>
+</div>
+{% endblock %}

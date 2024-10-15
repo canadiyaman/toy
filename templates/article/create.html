@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block container %}
+<div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+    <div class="col-sm-8 text-left">
+      <h1>Create New Article</h1>
+      <form action="{% url 'create-article' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Update">
+      </form>
+    </div>
+    <div class="col-sm-2 sidenav">
+    </div>
+</div>
+{% endblock %}
