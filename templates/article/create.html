@@ -8,7 +8,7 @@
       <form action="{% url 'create-article' %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input class="btn btn-primary" type="submit" value="Update">
+        <input class="btn btn-primary" type="submit" value="Create">
       </form>
     </div>
     <div class="col-sm-2 sidenav">

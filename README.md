@@ -45,3 +45,7 @@ python manage.py loadtestdata
 ![articles edited page](static/edited-page.png)
 
 
+### 4- Articles Create page
+![articles edited page](static/create-article-page.png)
+
+
