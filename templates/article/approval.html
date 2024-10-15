@@ -20,6 +20,13 @@
         <td>{{ article.get_status_display }}</td>
         <td>{{ article.title }}</td>
         <td>{{ article.created_at }}</td>
+        <td>
+            <form action="{% url 'article-approval' pk=article.pk %}" method="post">
+                {% csrf_token %}
+                <button name="approve" class="btn btn-success">Approve</button>
+                <button name="reject" class="btn btn-danger">Reject</button>
+            </form>
+        </td>
       </tr>
       {% empty %}
       <tr>

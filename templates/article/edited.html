@@ -2,7 +2,7 @@
 {% block container %}
 <div class="col-sm-2 sidenav"></div>
 <div class="col-sm-8 text-left">
-  <h1>Approval Article Page</h1>
+  <h1>Edited Articles Page</h1>
   <table class="table">
     <thead>
       <tr>
@@ -25,13 +25,6 @@
         <td>{{ article.status }}</td>
         <td>{{ article.edited_by }}</td>
         <td>{{ article.written_by }}</td>
-        <td>
-            <form action="{% url 'article-approval' pk=article.pk %}" method="post">
-                {% csrf_token %}
-                <button name="approve" class="btn btn-success">Approve</button>
-                <button name="reject" class="btn btn-danger">Reject</button>
-            </form>
-        </td>
       </tr>
       {% empty %}
       <tr>
